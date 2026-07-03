@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  basePath: "/Fishated_app",
+  // basePath: "/",
   images: {
     unoptimized: true,
   },
