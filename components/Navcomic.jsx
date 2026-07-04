@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Monitor, BookOpen } from "lucide-react";
 
-export default function Navcomic({switchOn="hidden", comicName=""}) {
+export default function Navcomic({ switchOn = "hidden", comicName = "" }) {
   const router = useRouter();
-
 
   return (
     <>
@@ -57,8 +57,15 @@ export default function Navcomic({switchOn="hidden", comicName=""}) {
         </div>
 
         <div className="mt-auto">
-          <div className="w-12 h-12 rounded-full bg-blue-400 text-white flex items-center justify-center font-black text-xl shadow-lg shadow-orange-500/20 ring-4 ring-blue-500/10">
-            M
+          <div className="w-19 h-auto relative rounded-lg bg-white flex items-center justify-center shadow-lg border border-gray-100 p-1.5 transition-all duration-300 hover:scale-105 cursor-pointer">
+            <Image
+              src="/images/my_logo.png"
+              alt="Fishated Personal Logo (Optimized)"
+              width={17} 
+              height={25}
+              className="object-cover w-full h-full rounded-[6px]" 
+              priority
+            />
           </div>
         </div>
       </nav>
@@ -66,8 +73,6 @@ export default function Navcomic({switchOn="hidden", comicName=""}) {
       {/* Mobile Bottom Navigation */}
       <div className="fixed bottom-0 left-0 right-0 z-[100] md:hidden">
         <div className="bg-white/95 backdrop-blur-2xl px-6  border-t border-neutral-200 flex items-center justify-around pb-2">
-          
-          
           {/* <button
             className="flex flex-col items-center gap-1 text-neutral-500"
             disabled
@@ -78,8 +83,8 @@ export default function Navcomic({switchOn="hidden", comicName=""}) {
 
           <div className="relative -top-4">
             <button
-               onClick={() => router.push("/")}
-               className="w-16 h-16 rounded-full bg-orange-500 text-white flex items-center justify-center shadow-2xl shadow-orange-500/40 ring-8 ring-white"
+              onClick={() => router.push("/")}
+              className="w-16 h-16 rounded-full bg-orange-500 text-white flex items-center justify-center shadow-2xl shadow-orange-500/40 ring-8 ring-white"
             >
               <i className="fi fi-rr-house-blank text-2xl" />
             </button>
@@ -90,7 +95,9 @@ export default function Navcomic({switchOn="hidden", comicName=""}) {
             className={`${switchOn} flex flex-col items-center gap-0 text-neutral-500 hover:text-orange-500 transition-colors`}
           >
             <i className="fi fi-rr-arrow-left text-2xl" />
-            <span className="text-[10px] font-bold uppercase tracking-tighter text-neutral-400">Back</span>
+            <span className="text-[10px] font-bold uppercase tracking-tighter text-neutral-400">
+              Back
+            </span>
           </button>
 
           {/* <button

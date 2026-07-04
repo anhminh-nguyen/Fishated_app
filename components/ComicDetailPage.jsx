@@ -4,7 +4,7 @@ import Navcomic from "@/components/Navcomic";
 import ChapterList from "@/components/ChapterList";
 import Intro from "@/components/Intro";
 
-export default function ComicDetailPage({ chapterCount, chapterName }) {
+export default function ComicDetailPage({ poster,chapterCount, chapterName, title,secondTitle, mainDesc,secondDesc,lightDesc }) {
   return (
     <div className="bg-black/20 min-h-screen font-inter text-neutral-600 pb-24 md:pb-0 transition-colors duration-500">
       {/* Navigation */}
@@ -16,7 +16,7 @@ export default function ComicDetailPage({ chapterCount, chapterName }) {
           
           {/* Intro Section */}
           <section className="mb-12 md:mb-20">
-            <Intro />
+            <Intro poster={poster} title={title} secondTitle={secondTitle} mainDesc={mainDesc} lightDesc={lightDesc} secondDesc={secondDesc}/>
           </section> 
 
           {/* Chapters Section */}
@@ -26,9 +26,9 @@ export default function ComicDetailPage({ chapterCount, chapterName }) {
                 <h2 className="text-3xl md:text-6xl font-open font-black text-orange-500 tracking-tighter mb-8">
                   Danh sách chương
                 </h2>
-                <p className="text-neutral-500 font-medium md:text-lg ">
+                {/* <p className="text-neutral-500 font-medium md:text-lg ">
                   Khám phá hành trình của Chito và Yuuri qua từng trang truyện.
-                </p>
+                </p> */}
               </div>
               
               <div className="flex items-center gap-3 bg-orange-50 border border-orange-100 px-6 py-3 rounded-2xl">

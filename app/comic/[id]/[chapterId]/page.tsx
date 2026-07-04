@@ -2,7 +2,9 @@ import ComicDisplay from "@/components/ComicDisplay";
 import { COMICS } from "@/lib/comics";
 import { getChapterImages } from "@/lib/getChapterImages";
 
-const VALID_COMICS = new Set(["Girllasttour", "ShinejiSimulation"]);
+const comicArr = COMICS.map((data)=>data.id)
+
+const VALID_COMICS = new Set(comicArr);
 
 interface PageProps {
   params: Promise<{
@@ -25,18 +27,18 @@ export default async function ComicChapterPage({ params }: PageProps) {
     );
   }
 
-  if (id === "ShinejiSimulation") {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-zinc-50 font-inter">
-        <div className="text-center p-8 bg-white rounded-2xl shadow-xl max-w-md">
-          <h1 className="text-3xl font-bold text-zinc-900 mb-4">Coming Soon</h1>
-          <p className="text-zinc-600 leading-relaxed"> 
-            Shineji Simulation is currently being updated. Please check back later!
-          </p>
-        </div>
-      </div>
-    );
-  }
+  // if (id === "ShinejiSimulation") {
+  //   return (
+  //     <div className="min-h-screen flex items-center justify-center bg-zinc-50 font-inter">
+  //       <div className="text-center p-8 bg-white rounded-2xl shadow-xl max-w-md">
+  //         <h1 className="text-3xl font-bold text-zinc-900 mb-4">Coming Soon</h1>
+  //         <p className="text-zinc-600 leading-relaxed"> 
+  //           Shineji Simulation is currently being updated. Please check back later!
+  //         </p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   const images = getChapterImages(id,chapterId);
 

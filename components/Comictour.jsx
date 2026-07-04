@@ -93,7 +93,7 @@ export default function Comictour({ items }) {
                   <Image
                     className="block h-full w-full object-cover"
                     src={item.poster}
-                    alt={item.title}
+                    alt={item.titleCard}
                     width={440}
                     height={330}
                   />
@@ -101,7 +101,7 @@ export default function Comictour({ items }) {
                   <div className="absolute bottom-0 left-0 flex items-end justify-between gap-[30px] bg-gradient-to-t from-black/75 via-black/35 to-transparent p-[50px_30px] max-[786px]:p-[30px_10px]">
                     <div className="min-w-0 text-left">
                       <h3 className="m-0 max-w-[180px] font-[family-name:var(--font-open-sans)] text-[3.5rem] font-extrabold leading-[1.05] text-white [text-shadow:0_4px_16px_rgba(0,0,0,0.6)] max-[786px]:text-[2.5rem] max-[486px]:text-[20px] max-[320px]:text-[20px]">
-                        {item.title}
+                        {item.titleCard}
                       </h3>
                       <p className="mt-[6px] line-clamp-2 max-w-[20rem] text-[1.5rem] leading-[1.25] text-white/85 max-[786px]:text-[1rem] max-[320px]:hidden">
                         {item.desc}
@@ -120,7 +120,7 @@ export default function Comictour({ items }) {
           <motion.div
             className="fixed inset-0 z-[9999] grid place-items-center bg-black/90 max-[786px]:place-items-[start_center] max-[486px]:place-items-center"
             style={{
-              backgroundImage: 'url("/images/background 3.png")',
+              backgroundImage: 'url("/images/background.png")',
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -139,14 +139,14 @@ export default function Comictour({ items }) {
             >
               <div className=" bg-black/10 relative grid place-items-center p-[28px] max-[786px]:order-2 max-[786px]:p-0">
                 <div className="h-[35rem] w-[min(570px,100%)] rounded-[22px] border border-white/0 bg-white/10 p-[22px_24px] backdrop-blur-[12px] max-[786px]:h-auto">
-                  <p className="my-[10px] ml-[30px] font-[family-name:var(--font-open-sans)] text-[2rem] font-medium leading-[1.1] text-[#FF5F00] max-[786px]:text-[20px] max-[486px]:text-[25px] max-[486px]:font-semibold max-[320px]:text-[25px] max-[320px]:font-semibold">
-                    {selected.title}
+                  <p className=" my-[10px] ml-[30px] font-[family-name:var(--font-open-sans)] text-[3rem] font-bold  leading-[1.1] text-[#FF5F00] max-[786px]:text-[20px] max-[486px]:text-[25px] max-[486px]:font-semibold max-[320px]:text-[25px] max-[320px]:font-semibold">
+                    {selected.titleCard}
                   </p>
-                  <p className="mb-[18px] ml-[30px] line-clamp-4 pb-[23px] font-[family-name:var(--font-open-sans)] text-[2rem] leading-[1.45] opacity-90 [word-spacing:2px] max-[1000px]:text-[15px] max-[786px]:line-clamp-3 max-[786px]:pb-0 max-[320px]:text-[13px]">
+                  <p className="mb-[18px] ml-[30px] line-clamp-4 pt-[10px] pb-[23px] font-[family-name:var(--font-open-sans)] text-[18px] leading-[1.45] opacity-90 [word-spacing:2px] max-[1000px]:text-[15px] max-[786px]:line-clamp-3 max-[786px]:pb-[10px] max-[320px]:text-[13px]">
                     {selected.desc}
                   </p>
                   <button
-                    className="ml-[30px] cursor-pointer rounded-full border-0 bg-[#FF5F00] px-[14px] py-[10px] font-[family-name:var(--font-open-sans)] text-[20px] text-white hover:bg-black active:bg-[#FF5F00] max-[786px]:text-[15px]"
+                    className="ml-[30px] cursor-pointer rounded-full border-0 bg-[#FF5F00] px-[14px] py-[10px] font-[family-name:var(--font-open-sans)] text-[20px] text-white hover:bg-black active:bg-[#FF5F00] max-[786px]:text-[15px] max-[786px]:mt-[15px]"
                     type="button"
                     onClick={() => router.push(`/comic/${selected.id}`)}
                   >
@@ -163,7 +163,7 @@ export default function Comictour({ items }) {
                   <Image
                     className="block h-full w-full object-cover"
                     src={selected.hero ?? selected.poster}
-                    alt={selected.title}
+                    alt={selected.titleCard}
                     fill
                     sizes="(max-width: 786px) 70vh, 40vw"
                   />
