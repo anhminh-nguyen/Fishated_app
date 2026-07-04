@@ -37,7 +37,7 @@ export default async function ComicChapterPage({ params }: PageProps) {
     );
   }
 
-  const images = getChapterImages(chapterId);
+  const images = getChapterImages(id,chapterId);
 
-  return <ComicDisplay value={images} chapter={chapterId} />;
+  return <ComicDisplay value={images} chapter={chapterId} id={id} />;
 }

@@ -6,7 +6,7 @@ import Intro from "@/components/Intro";
 
 export default function ComicDetailPage({ chapterCount, chapterName }) {
   return (
-    <div className="bg-neutral-50 min-h-screen font-inter text-neutral-600 pb-24 md:pb-0 transition-colors duration-500">
+    <div className="bg-black/20 min-h-screen font-inter text-neutral-600 pb-24 md:pb-0 transition-colors duration-500">
       {/* Navigation */}
       <Navcomic /> 
 
@@ -22,11 +22,11 @@ export default function ComicDetailPage({ chapterCount, chapterName }) {
           {/* Chapters Section */}
           <section className="bg-white rounded-[2rem] border border-neutral-200 p-6 md:p-16 shadow-sm">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-neutral-100 pb-8">
-              <div>
-                <h2 className="text-3xl md:text-6xl font-black text-neutral-800 tracking-tighter mb-4">
+              <div className="">
+                <h2 className="text-3xl md:text-6xl font-open font-black text-orange-500 tracking-tighter mb-8">
                   Danh sách chương
                 </h2>
-                <p className="text-neutral-500 font-medium md:text-lg">
+                <p className="text-neutral-500 font-medium md:text-lg ">
                   Khám phá hành trình của Chito và Yuuri qua từng trang truyện.
                 </p>
               </div>

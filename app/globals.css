@@ -90,7 +90,7 @@ h3 {
 
 .swiper-slide-active .comic-card {
   transform: scale(1.15);
-  opacity: 1;
+  opacity: 70;
   filter: none;
 }
 

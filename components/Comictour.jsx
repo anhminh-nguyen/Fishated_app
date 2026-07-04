@@ -17,7 +17,7 @@ export default function Comictour({ items }) {
     if (!swiper) return;
 
     requestAnimationFrame(() => {
-      swiper.update();
+      swiper.update(); 
       swiper.autoplay?.start();
     });
   }, []);
@@ -116,9 +116,9 @@ export default function Comictour({ items }) {
       <AnimatePresence>
         {selected && (
           <motion.div
-            className="fixed inset-0 z-[9999] grid place-items-center bg-black/25 max-[786px]:place-items-[start_center] max-[486px]:place-items-center"
+            className="fixed inset-0 z-[9999] grid place-items-center bg-black/90 max-[786px]:place-items-[start_center] max-[486px]:place-items-center"
             style={{
-              backgroundImage: 'url("/Fishated_app/images/background 3.png")',
+              backgroundImage: 'url("/images/background 3.png")',
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -135,8 +135,8 @@ export default function Comictour({ items }) {
               exit={{ opacity: 0, y: 10, scale: 0.98 }}
               transition={{ duration: 0.2 }}
             >
-              <div className="relative grid place-items-center p-[28px] max-[786px]:order-2 max-[786px]:p-0">
-                <div className="h-[35rem] w-[min(570px,100%)] rounded-[22px] border border-white/20 bg-white/10 p-[22px_24px] backdrop-blur-[12px] max-[786px]:h-auto">
+              <div className=" bg-black/10 relative grid place-items-center p-[28px] max-[786px]:order-2 max-[786px]:p-0">
+                <div className="h-[35rem] w-[min(570px,100%)] rounded-[22px] border border-white/0 bg-white/10 p-[22px_24px] backdrop-blur-[12px] max-[786px]:h-auto">
                   <p className="my-[10px] ml-[30px] font-[family-name:var(--font-open-sans)] text-[2rem] font-medium leading-[1.1] text-[#FF5F00] max-[786px]:text-[20px] max-[486px]:text-[25px] max-[486px]:font-semibold max-[320px]:text-[25px] max-[320px]:font-semibold">
                     {selected.title}
                   </p>
@@ -167,11 +167,11 @@ export default function Comictour({ items }) {
                   />
                 </motion.div>
                 <button
-                  className="absolute right-[14px] top-[14px] z-[999] h-[60px] w-[60px] cursor-pointer rounded-[10px] border-0 bg-black/65 text-[50px] text-[#FFC300] max-[786px]:h-[40px] max-[786px]:w-[40px] max-[786px]:text-[30px] max-[486px]:h-[35px] max-[486px]:w-[35px] max-[486px]:text-[20px] max-[320px]:h-[35px] max-[320px]:w-[35px] max-[320px]:text-[20px]"
+                  className="absolute right-[14px] top-[14px] z-[999] h-[50px] w-[50px] cursor-pointer rounded-[10px] border-0 bg-black/65 text-[3rem] text-[#FFC300] max-[786px]:h-[40px] max-[786px]:w-[40px] max-[786px]:text-[30px] max-[486px]:h-[35px] max-[486px]:w-[35px] max-[486px]:text-[20px] max-[320px]:h-[35px] max-[320px]:w-[35px] max-[320px]:text-[20px] "
                   onClick={close}
                   type="button"
                 >
-                  ×
+                  X
                 </button>
               </div>
             </motion.div>
