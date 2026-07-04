@@ -46,5 +46,5 @@ export default async function ComicChapterPage({ params }: PageProps) {
   const chapterCount = comic?.sl || 0;
   const chapterList = comic?.chapter || [];
 
-  return <ComicDisplay value={images} chapter={chapterId} id={id} chapterNumber={chapterCount} chapterList={chapterList} title={comic?.title}/>;
+  return <ComicDisplay value={images} chapter={chapterId} id={id} chapterNumber={chapterCount} chapterList={chapterList} title={comic?.titleCard}/>;
 }
