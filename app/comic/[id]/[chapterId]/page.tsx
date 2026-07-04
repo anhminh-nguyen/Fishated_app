@@ -1,4 +1,5 @@
 import ComicDisplay from "@/components/ComicDisplay";
+import { COMICS } from "@/lib/comics";
 import { getChapterImages } from "@/lib/getChapterImages";
 
 const VALID_COMICS = new Set(["Girllasttour", "ShinejiSimulation"]);
@@ -39,5 +40,7 @@ export default async function ComicChapterPage({ params }: PageProps) {
 
   const images = getChapterImages(id,chapterId);
 
-  return <ComicDisplay value={images} chapter={chapterId} id={id} />;
+  const chapterCount = COMICS.find((comics) => comics.id === id)?.sl || 0;
+
+  return <ComicDisplay value={images} chapter={chapterId} id={id} chapterNumber={chapterCount} />;
 }
