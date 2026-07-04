@@ -4,9 +4,26 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Navcomic from "@/components/Navcomic";
 
-export default function ComicDisplay({ value, chapter, id, chapterNumber }) {
+export default function ComicDisplay({ value, chapter, id, chapterNumber, chapterList,title }) {
   const router = useRouter();
-  const currentChapter = parseInt(chapter);
+  
+  // Find current index in chapterList (if it exists)
+  const currentIndex = chapterList && chapterList.length > 0 
+    ? chapterList.findIndex(c => String(c) === String(chapter))
+    : parseInt(chapter) - 1; // Fallback for comics without chapterList
+
+  const hasPrev = currentIndex > 0;
+  const hasNext = chapterList && chapterList.length > 0 
+    ? currentIndex < chapterList.length - 1
+    : currentIndex < chapterNumber - 1;
+
+  const prevChapter = hasPrev 
+    ? (chapterList && chapterList.length > 0 ? chapterList[currentIndex - 1] : (currentIndex).toString()) 
+    : null;
+    
+  const nextChapter = hasNext 
+    ? (chapterList && chapterList.length > 0 ? chapterList[currentIndex + 1] : (currentIndex + 2).toString()) 
+    : null;
 
   return (
     <div className="bg-[#121212] min-h-screen text-neutral-300 font-inter transition-colors duration-500">
@@ -21,7 +38,7 @@ export default function ComicDisplay({ value, chapter, id, chapterNumber }) {
             </span>
           </div>
           <h1 className="text-2xl md:text-6xl font-black text-neutral-300 tracking-tighter text-center">
-            Girls' Last Tour
+            {title}
           </h1>
         </div>
 
@@ -52,10 +69,10 @@ export default function ComicDisplay({ value, chapter, id, chapterNumber }) {
         <div className="w-full max-w-3xl px-4 py-16 md:py-24 border-t border-neutral-200 mt-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <button
-              onClick={() => router.push(`/comic/${id}/${currentChapter - 1}`)}
-              disabled={currentChapter <= 1}
+              onClick={() => router.push(`/comic/${id}/${prevChapter}`)}
+              disabled={!hasPrev}
               className={`group flex items-center gap-6 p-6 rounded-2xl border transition-all duration-500 ${
-                currentChapter <= 1
+                !hasPrev
                   ? "opacity-30 grayscale cursor-not-allowed border-neutral-200"
                   : "bg-white border-neutral-200 hover:border-orange-500/50 hover:bg-neutral-50 shadow-sm"
               }`}
@@ -68,23 +85,22 @@ export default function ComicDisplay({ value, chapter, id, chapterNumber }) {
                   Previous
                 </span>
                 <span className="text-[15px] font-bold text-neutral-700">
-                  Chương {(currentChapter - 1).toString().padStart(2, "0")}
+                  Chương {prevChapter ? prevChapter.toString().padStart(2, "0") : "--"}
                 </span>
               </div>
             </button>
 
             <button
-              onClick={() => router.push(`/comic/${id}/${currentChapter + 1}`)}
+              onClick={() => router.push(`/comic/${id}/${nextChapter}`)}
               className="group flex items-center justify-between p-6 rounded-2xl bg-orange-500 hover:bg-orange-600 transition-all duration-500 shadow-xl shadow-orange-500/20 active:scale-95 disabled:opacity-40 disabled:pointer-events-none disabled:cursor-not-allowed disabled:shadow-none"
-              disabled={parseInt(currentChapter) >= parseInt(chapterNumber)}
+              disabled={!hasNext}
             >
               <div className="flex flex-col items-start text-left pl-2 text-white">
                 <span className="text-[10px] font-black uppercase tracking-widest text-white/70">
                   Up Next
                 </span>
                 <span className="text-[15px] font-bold">
-                  Chương{" "}
-                  {(parseInt(currentChapter) + 1).toString().padStart(2, "0")}
+                  Chương {nextChapter ? nextChapter.toString().padStart(2, "0") : "--"}
                 </span>
               </div>
               <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-2 transition-transform">

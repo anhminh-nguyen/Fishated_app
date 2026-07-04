@@ -42,7 +42,9 @@ export default async function ComicChapterPage({ params }: PageProps) {
 
   const images = getChapterImages(id,chapterId);
 
-  const chapterCount = COMICS.find((comics) => comics.id === id)?.sl || 0;
+  const comic = COMICS.find((comics) => comics.id === id);
+  const chapterCount = comic?.sl || 0;
+  const chapterList = comic?.chapter || [];
 
-  return <ComicDisplay value={images} chapter={chapterId} id={id} chapterNumber={chapterCount} />;
+  return <ComicDisplay value={images} chapter={chapterId} id={id} chapterNumber={chapterCount} chapterList={chapterList} title={comic?.title}/>;
 }
