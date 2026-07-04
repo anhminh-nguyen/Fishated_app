@@ -27,7 +27,7 @@ export default async function ComicChapterPage({ params }: PageProps) {
     );
   }
 
-  // if (id === "ShinejiSimulation") {
+  // if (id === "ShimejiSimulation") {
   //   return (
   //     <div className="min-h-screen flex items-center justify-center bg-zinc-50 font-inter">
   //       <div className="text-center p-8 bg-white rounded-2xl shadow-xl max-w-md">

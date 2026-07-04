@@ -2,17 +2,19 @@
 
 import { useRouter } from "next/navigation";
 
-export default function ChapterList({ sl, name }) {
+export default function ChapterList({ sl, name, chapter }) {
   const router = useRouter();
   const chapters = [];
 
-  for (let index = sl; index > 0; index -= 1) {
+  for (let index = sl - 1; index >= 0; index -= 1) {
+    const chapData = (chapter && chapter[index]) || (index + 1).toString();
+
     chapters.push(
       <button
         key={index}
         className="group relative flex items-center justify-between p-5 md:p-8 rounded-2xl bg-white border border-neutral-200 hover:border-orange-500/50 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md active:scale-95"
         id={`c${index}`}
-        onClick={() => router.push(`/comic/${name}/${index}`)}
+        onClick={() => router.push(`/comic/${name}/${chapData}`)}
         type="button"
       >
         {/* Hover background effect */}
@@ -23,7 +25,7 @@ export default function ChapterList({ sl, name }) {
             Chapter
           </span>
           <span className="text-xl md:text-3xl font-black text-neutral-800 group-hover:text-orange-500 transition-colors">
-            {index.toString().padStart(2, '0')}
+            {chapData.toString().padStart(2, '0')}
           </span>
         </div>
 

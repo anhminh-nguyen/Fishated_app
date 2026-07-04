@@ -4,7 +4,12 @@ import { COMICS } from "@/lib/comics";
 
 export default async function ComicPage({ params }) {
   const { id } = await params;
-  const comic =  COMICS.find((comic)=>comic.id === id) || "";
+  const comic = COMICS.find((c) => String(c.id) === String(id));
+
+  if (!comic) {
+    return <div>Comic not found</div>;
+  }
+
   const chapterNumber = comic.sl || 0;
   const title = comic.title || "";
   const secondTitle = comic.secondTitle || "";
@@ -12,13 +17,14 @@ export default async function ComicPage({ params }) {
   return <ComicDetailPage 
   id={id} 
   chapterCount={chapterNumber} 
-  chapterName={id}  
+  chapterName={comic?.id || ""}  
   title={title}
   secondTitle={secondTitle}
   mainDesc={comic?.mainDesc || ""}
   secondDesc={comic?.secondDesc || ""}
   lightDesc={comic?.lightDesc || ""}
   poster = {comic?.poster || "" }
+  chapter = {comic?.chapter || [] }
 
   />;
 }

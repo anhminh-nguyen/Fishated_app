@@ -4,7 +4,7 @@ import Navcomic from "@/components/Navcomic";
 import ChapterList from "@/components/ChapterList";
 import Intro from "@/components/Intro";
 
-export default function ComicDetailPage({ poster,chapterCount, chapterName, title,secondTitle, mainDesc,secondDesc,lightDesc }) {
+export default function ComicDetailPage({ poster,chapterCount, chapterName, title,secondTitle, mainDesc,secondDesc,lightDesc,chapter }) {
   return (
     <div className="bg-black/20 min-h-screen font-inter text-neutral-600 pb-24 md:pb-0 transition-colors duration-500">
       {/* Navigation */}
@@ -37,7 +37,7 @@ export default function ComicDetailPage({ poster,chapterCount, chapterName, titl
               </div>
             </div>
             
-            <ChapterList sl={chapterCount} name={chapterName} />
+            <ChapterList sl={chapterCount} name={chapterName} chapter={chapter}/>
           </section>
 
           {/* Footer Decoration */}
