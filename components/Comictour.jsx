@@ -17,7 +17,7 @@ export default function Comictour({ items }) {
     if (!swiper) return;
 
     requestAnimationFrame(() => {
-      swiper.update(); 
+      swiper.update();
       swiper.autoplay?.start();
     });
   }, []);
@@ -85,8 +85,10 @@ export default function Comictour({ items }) {
                 type="button"
               >
                 <motion.div
-                  className="comic-card relative aspect-[4/3] w-[clamp(32rem,40vw,44rem)] scale-[0.79] overflow-hidden rounded-[1.4rem] opacity-90 grayscale-[10%] transition-[transform,opacity,filter] duration-[120ms] ease-linear max-[486px]:w-[clamp(23rem,40vw,44rem)] max-[320px]:w-[clamp(20rem,20vw,44rem)]"
-                  layoutId={selected?.id === item.id ? `poster-${item.id}` : undefined}
+                  className="comic-card relative aspect-[3/4] sm:aspect-[4/3] w-[clamp(16rem,80vw,22rem)] sm:w-[clamp(32rem,40vw,44rem)] scale-[0.79] overflow-hidden rounded-[1.4rem] opacity-90 grayscale-[10%] transition-[transform,opacity,filter] duration-[120ms] ease-linear"
+                  layoutId={
+                    selected?.id === item.id ? `poster-${item.id}` : undefined
+                  }
                 >
                   <Image
                     className="block h-full w-full object-cover"
