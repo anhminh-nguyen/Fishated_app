@@ -45,35 +45,34 @@ export default function Comictour({ items }) {
   return (
     <div>
       <div className={selected ? "opacity-70" : ""}>
-        <Swiper
+      <Swiper
           modules={[Autoplay]}
           slidesPerView="auto"
           loop
           autoplay={{ delay: 1800, disableOnInteraction: false }}
           speed={450}
-        
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
           breakpoints={{
             0: {
               slidesOffsetBefore: 0,
-              spaceBetween: 2,
+              spaceBetween: 16,
               centeredSlides: true,
             },
             480: {
               slidesOffsetBefore: 0,
-              spaceBetween: 0,
+              spaceBetween: 24,
               centeredSlides: true,
             },
             786: {
               slidesOffsetBefore: 0,
-              spaceBetween: 0,
+              spaceBetween: 30,
               centeredSlides: true,
             },
             1024: {
               slidesOffsetBefore: 280,
-              spaceBetween: 0,
+              spaceBetween: 90,
               centeredSlides: false,
             },
           }}
@@ -81,12 +80,12 @@ export default function Comictour({ items }) {
           {items.map((item) => (
             <SwiperSlide key={item.id}>
               <button
-                className="cursor-pointer border-0 bg-transparent p-0 "
+                className="cursor-pointer border-0 bg-transparent p-0"
                 onClick={() => open(item)}
                 type="button"
               >
                 <motion.div
-                  className="comic-card relative aspect-[2/3] sm:aspect-[4/3] max-md:h-[50vh] scale-[0.80] w-[clamp(75vw,80vw,22rem)] sm:w-[clamp(32rem,40vw,44rem)] overflow-hidden rounded-[2rem] opacity-90 grayscale-[10%] transition-[transform,opacity,filter] duration-[120ms] ease-linear"
+                  className="comic-card relative aspect-[3/2] sm:aspect-[4/3] w-[clamp(25rem,95vw,30rem)] sm:w-[clamp(35rem,85vw,44rem)] scale-[0.90] overflow-hidden sm:h-auto h-[45vh] rounded-[1.4rem] opacity-90 grayscale-[10%] transition-[transform,opacity,filter] duration-[120ms] ease-linear"
                   layoutId={
                     selected?.id === item.id ? `poster-${item.id}` : undefined
                   }
@@ -99,12 +98,12 @@ export default function Comictour({ items }) {
                     height={330}
                   />
 
-                  <div className="absolute bottom-0 left-0 flex items-end justify-between gap-[30px] bg-gradient-to-t from-black/75  via-black/35 to-transparent p-[50px_20px] max-[786px]:p-[30px_10px]">
+                  <div className="absolute bottom-0 left-0 flex items-end justify-between gap-[30px] bg-gradient-to-t from-black/75 via-black/35 to-transparent p-[50px_30px] max-[786px]:p-[30px_10px]">
                     <div className="min-w-0 text-left">
                       <h3 className="m-0 max-w-[180px] font-[family-name:var(--font-open-sans)] text-[3.5rem] font-extrabold leading-[1.05] text-white [text-shadow:0_4px_16px_rgba(0,0,0,0.6)] max-[786px]:text-[2.5rem] max-[486px]:text-[25px] max-[320px]:text-[20px]">
                         {item.titleCard}
                       </h3>
-                      <p className="mt-[6px] line-clamp-2 max-w-[20rem] text-[1.5rem] leading-[1.25] text-white/85 max-[786px]:text-[1rem] max-[320px]:hidden">
+                      <p className="mt-[6px] line-clamp-2 max-w-[20rem] text-[1.5rem] leading-[1.25] text-white/85 max-[786px]:text-[1.5rem] max-[320px]:hidden">
                         {item.desc}
                       </p>
                     </div>
@@ -114,7 +113,7 @@ export default function Comictour({ items }) {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+</div>
 
       <AnimatePresence>
         {selected && (
