@@ -17,20 +17,29 @@ export default function HomeSection() {
           />
         </div>
 
-        <div className="flex flex-col text-center min-h-screen items-center mt-[15rem] font-[family-name:var(--font-titan-one)] font-bold max-lg:my-[1.5rem] max-md:px-2 max-md:items-center max-md:min-w-screen">
-          
-          <h2 className="text-[4.5rem] max-md:text-[2.8rem] mb-6 leading-tight text-neutral-800">
-            Here at <span className="text-orange-600/90 italic tracking-wide">Fishated</span> we have:
-          </h2>
-          
-          <ul className="list-none p-0 m-0 space-y-3 text-[3.5rem] max-md:text-[2rem]">
-            <li className="text-amber-600/90">Potatoes🥔</li>
-            <li className="text-emerald-700/90">Kettenkrad🪖</li>
-            <li className="text-sky-700/90">- Hole Digging Club🪏</li>
-            <li className="text-rose-600/90">- Wine and Submarines☢️</li>
-          </ul>
+          <div className="flex flex-col text-center min-h-screen items-center mt-[15rem] font-[family-name:var(--font-titan-one)] font-bold max-lg:my-[1.5rem] max-md:px-2 max-md:items-center max-md:min-w-screen">
+            
+            <h2 className="text-[4.5rem] max-md:text-[2.8rem] mb-16 max-md:mb-10 leading-tight text-neutral-800">
+              Here at{' '}
+              <a 
+                href="https://www.facebook.com/fishated" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-sky-500/90 tracking-wide hover:opacity-80 transition-opacity"
+              >
+                Fishated
+              </a>{' '}
+              we have:
+            </h2>
+            
+            <ul className="list-none p-0 m-0 space-y-3 text-[3.5rem] max-md:text-[2rem]">
+              <li className="text-emerald-700/90">🪖Kettenkrad🪖</li>
+              <li className="text-sky-700/90">🪏Hole Digging Club🪏</li>
+              <li className="text-rose-600/90">☢️ Wine and Submarines☢️</li>
+              <li className="text-amber-600/90">🥔Finally, a lot of Potatoes🥔</li>
+            </ul>
 
-        </div>
+          </div>
       </div>
     </>
   );
