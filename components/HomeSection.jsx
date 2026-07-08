@@ -17,12 +17,19 @@ export default function HomeSection() {
           />
         </div>
 
-        <div className="flex flex-col text-center min-h-screen items-center  mt-[15rem] font-[family-name:var(--font-titan-one)] text-[3.5rem] font-light max-lg:my-[1.5rem] max-md:text-[2rem] max-md:px-2 max-md:items-center max-md:min-w-screen ">
-          <p>
-            Fuel your passion for stories
-            <br />
-            Welcome to <span className="text-orange-500">Fishated</span>!
-          </p>
+        <div className="flex flex-col text-center min-h-screen items-center mt-[15rem] font-[family-name:var(--font-alata)] font-bold max-lg:my-[1.5rem] max-md:px-2 max-md:items-center max-md:min-w-screen">
+  
+          <h2 className="text-[4.5rem] max-md:text-[2.8rem] mb-6 leading-tight text-neutral-800">
+            Ở đây chúng mình có:
+          </h2>
+          
+          <ul className="list-none p-0 m-0 space-y-3 text-[3.5rem] max-md:text-[2rem]">
+            <li className="text-amber-600/90">- Khoai tây (Potatos)</li>
+            <li className="text-emerald-700/90">- Kettenkrad</li>
+            <li className="text-sky-700/90">- Câu Lạc Bộ Đào Hố</li>
+            <li className="text-rose-600/90">- Rượu và Tàu ngầm</li>
+          </ul>
+
         </div>
       </div>
     </>
