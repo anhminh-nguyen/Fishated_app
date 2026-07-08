@@ -121,7 +121,7 @@ export default function Comictour({ items }) {
           <motion.div
             className="fixed inset-0 z-[9999] grid place-items-center bg-black/90 max-[786px]:place-items-[start_center] max-[486px]:place-items-center"
             style={{
-              backgroundImage: 'url("/images/background.png")',
+              backgroundImage: 'url("/images/background.jpg")',
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
