@@ -8,7 +8,7 @@ export default function ComicsSection() {
     <>
       
 
-      <div className="z-[7] mt-[100px] flex h-[45rem] flex-col max-h-screen content-start justify-center max-md:mt-[10px]">
+      <div className="z-[7]  flex flex-col min-h-screen content-start max-md:justify-start justify-center m-auto">
         <Comictour items={loopItems} />
       </div>
 

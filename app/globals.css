@@ -92,6 +92,7 @@ h3 {
   transform: scale(1.15);
   opacity: 70;
   filter: none;
+  width: 80%;
 }
 
 .comic-nav-sidebar {

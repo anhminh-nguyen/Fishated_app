@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Intro({title,secondTitle="",mainDesc="",secondDesc="",lightDesc="",poster=""}) {
+export default function Intro({title,secondTitle="",mainDesc="",secondDesc="",lightDesc="",poster="",author="", translator=""}) {
   return (
     <div className="relative overflow-hidden rounded-3xl bg-white text-neutral-800 shadow-xl border border-neutral-200 transition-colors duration-500">
       {/* Cinematic Banner Background */}
@@ -21,7 +21,7 @@ export default function Intro({title,secondTitle="",mainDesc="",secondDesc="",li
 
         {/* Titles */}
         <div className="space-y-6 mb-12 ">
-          <h1 className="text-6xl sm:text-6xl md:text-50xl font-black tracking-tighter text-neutral-800 drop-shadow-sm">
+          <h1 className="text-5xl sm:text-7xl  font-black tracking-tighter text-neutral-800 drop-shadow-sm">
            {title}
           </h1>
           <h2 className="text-base sm:text-xl md:text-2xl font-bold text-orange-500 tracking-[0.3em] uppercase opacity-90">
@@ -47,9 +47,9 @@ export default function Intro({title,secondTitle="",mainDesc="",secondDesc="",li
         {/* Footer Info */}
         <div className="mt-12 pt-8 border-t border-neutral-100 w-full max-w-3xl">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-md md:text-[10px] text-neutral-400 text-center md:text-left font-medium">
-              Bản dịch tiếng Việt bởi <span className="text-orange-500 font-bold">Fishated</span><br />
-              © Tsukumizu / Shinchosha
+            <p className="text-md md:text-[13px] text-neutral-400 text-center md:text-left font-medium">
+              Bản dịch tiếng Việt bởi <span className="text-orange-500 font-bold">{translator}</span><br />
+              {author}
             </p>
             
             <div className="flex justify-center gap-8 text-neutral-500 font-bold text-[15px]">

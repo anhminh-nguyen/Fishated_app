@@ -19,7 +19,7 @@ export default function Navcomic({ switchOn = "hidden", comicName = "" }) {
           className="mb-12 hover:scale-110 transition-transform active:scale-95  "
         >
           <Image
-            className="h-14 w-14 rounded-full border border-neutral-200 shadow-2xl bg-white ring-4 ring-black-700/10"
+            className="h-auto w-[40px] rounded-full border border-neutral-200 shadow-2xl bg-white ring-4 ring-black-700/10"
             src="/images/favicon.png"
             alt="Fishated"
             width={250}
@@ -34,7 +34,7 @@ export default function Navcomic({ switchOn = "hidden", comicName = "" }) {
             onClick={() => router.push("/")}
             type="button"
           >
-            <i className="fi fi-rr-house-blank text-2xl" />
+            <i className="fi fi-rr-house-blank text-3xl " />
           </button>
 
           {/* <button
@@ -57,13 +57,13 @@ export default function Navcomic({ switchOn = "hidden", comicName = "" }) {
         </div>
 
         <div className="mt-auto">
-          <div className="w-19 h-auto relative rounded-lg bg-white flex items-center justify-center shadow-lg border border-gray-100 p-1.5 transition-all duration-300 hover:scale-105 cursor-pointer">
+          <div className="w-[45px] h-auto relative bg-white flex items-center justify-center shadow-lg border rounded-full border-gray-100  transition-all duration-300 hover:scale-105 cursor-pointer">
             <Image
               src="/images/my_logo.png"
-              alt="Fishated Personal Logo (Optimized)"
-              width={17} 
-              height={25}
-              className="object-cover w-full h-full rounded-[6px]" 
+              alt="M creator"
+              width={40} 
+              height={40}
+              className="object-cover w-full h-full rounded-full" 
               priority
             />
           </div>

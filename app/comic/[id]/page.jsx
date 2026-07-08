@@ -25,6 +25,8 @@ export default async function ComicPage({ params }) {
   lightDesc={comic?.lightDesc || ""}
   poster = {comic?.poster || "" }
   chapter = {comic?.chapter || [] }
+  author = {comic?.author || ""}
+  translator = {comic?.translator || ""}
 
   />;
 }
