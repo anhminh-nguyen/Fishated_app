@@ -17,12 +17,14 @@ export default function HomeSection() {
           />
         </div>
 
-        <div className="flex flex-col text-center min-h-screen items-center  mt-[15rem] font-[family-name:var(--font-titan-one)] text-[3.5rem] font-light max-lg:my-[1.5rem] max-md:text-[2rem] max-md:px-2 max-md:items-center max-md:min-w-screen ">
-          <p>
-            Fuel your passion for stories
-            <br />
-            Welcome to <span className="text-orange-500">Fishated</span>!
-          </p>
+        <div className="flex flex-col text-center min-h-screen items-center mt-[15rem] font-[family-name:var(--font-titan-one)] text-[3.5rem] font-bold max-lg:my-[1.5rem] max-md:text-[2rem] max-md:px-2 max-md:items-center max-md:min-w-screen">
+          <p className="mb-4">Ở đây, chúng mình có:</p>
+          <ul className="list-none p-0 m-0 space-y-2">
+            <li className="text-yellow-600">- Khoai tây (Potato)</li>
+            <li className="text-green-600">- Kettenkrad</li>
+            <li className="text-blue-600">- Câu Lạc Bộ Đào Hố (Hole Digging Club)</li>
+            <li className="text-red-600">- Rượu và Tàu ngầm</li>
+          </ul>
         </div>
       </div>
     </>
