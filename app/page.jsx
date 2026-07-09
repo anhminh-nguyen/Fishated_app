@@ -27,7 +27,7 @@ export default function HomePage() {
           <div id="line-3" className="absolute top-0"></div>
 
           <div
-  className="absolute left-0 top-0 z-[1] flex flex-col h-full w-[30%] bg-[rgba(255,122,0,0.82)] backdrop-blur-[12px] max-[1024px]:w-[40%] max-md:hidden sidebar-block"
+  className="absolute left-0 top-0 z-[1] flex flex-col h-full w-[30%] bg-orange-500/80 backdrop-blur-[12px] max-[1024px]:w-[40%] max-md:hidden sidebar-block"
 />
 
           <div className="z-[6] flex flex-col w-[30%] max-[1024px]:w-[40%] max-md:w-full max-md:bg-orange-500/90 max-md:backdrop-blur-[12px] max-md:py-6">
