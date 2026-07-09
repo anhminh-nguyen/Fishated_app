@@ -36,7 +36,7 @@ export default function HomePage() {
             </h3>
             <a
               href="#fishated"
-              className=" hidden text-white font-[family-name:var(--font-luckiest-guy)] text-2xl nav-link max-md:block max-md:text-center max-md:pt-4 max-md:mx-auto"
+              className=" hidden max-md:border-white font-[family-name:var(--font-luckiest-guy)] text-2xl nav-link max-md:block max-md:text-center max-md:pt-4 max-md:mx-auto"
             >
               Home
             </a>
