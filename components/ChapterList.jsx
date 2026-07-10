@@ -24,7 +24,7 @@ export default function ChapterList({ sl, name, chapter }) {
         key={index}
         className="group relative flex items-center justify-between p-5 md:p-8 rounded-2xl bg-white border border-neutral-200 hover:border-orange-500/50 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md active:scale-95"
         id={`c${index}`}
-        onClick={() => router.push(`/comic/${cleanRouteParam(name)}/${cleanRouteParam(chapData)}`)}
+        onClick={() => router.push(`/comic/name/${cleanRouteParam(chapData)}`)}
         type="button"
       >
         {/* Hover background effect */}
