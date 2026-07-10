@@ -6,6 +6,16 @@ export default function ChapterList({ sl, name, chapter }) {
   const router = useRouter();
   const chapters = [];
 
+  const cleanRouteParam = (str) => {
+  if (!str) return "";
+  return str
+    .toLowerCase()                      // 1. Chuyển thành chữ thường
+    .normalize("NFD")                   // 2. Khử dấu tiếng Việt
+    .replace(/[\u0300-\u036f]/g, "")    // 3. Xóa dấu tiếng Việt
+    .replace(/[^\w.]/g, "")             // 4. Xóa ký tự đặc biệt NHƯNG GIỮ LẠI DẤU CHẤM (.)
+    .replace(/\s+/g, "");               // 5. Xóa bỏ hoàn toàn khoảng trắng
+};
+
   for (let index = sl - 1; index >= 0; index -= 1) {
     const chapData = (chapter && chapter[index]) || (index + 1).toString();
 
@@ -14,7 +24,7 @@ export default function ChapterList({ sl, name, chapter }) {
         key={index}
         className="group relative flex items-center justify-between p-5 md:p-8 rounded-2xl bg-white border border-neutral-200 hover:border-orange-500/50 transition-all duration-300 overflow-hidden shadow-sm hover:shadow-md active:scale-95"
         id={`c${index}`}
-        onClick={() => router.push(``/comic/${encodeURIComponent(name)}/${encodeURIComponent(chapData)}``)}
+        onClick={() => router.push(`/comic/${cleanRouteParam(name)}/${cleanRouteParam(chapData)}`)}
         type="button"
       >
         {/* Hover background effect */}
